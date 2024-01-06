@@ -10,7 +10,7 @@ exports.postLogin = async (req, res) => {
   
   try {
     const { email, password } = req.body;
-console.log(req.body);
+
     const user = await userModel.findOne({email})
 
     if (!user) {
@@ -26,6 +26,7 @@ console.log(req.body);
       }
     }
 
+    
   } catch (err) {
     console.log(err);
     console.log('error occured', err);
