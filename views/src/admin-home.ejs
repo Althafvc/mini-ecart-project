@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="/admin-home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h2>Admin Panel</h2>
+            <button onclick="window.location.href='/admin/addproduct'" class="btn">Add Product</button>
+            <button onclick="window.location.href='/admin/logout'" class="btn" style="margin-right: 160px;">Logout</button>
+
+        </div>
+
+        <div class="expansion">
+
+            <% datas.forEach((data) =>{ %>
+
+            <div class="product-area">
+
+
+                <img src="/uploads/<%= data.image %>"  width="100%" height="100%"  alt="image not found" >
+                
+
+                <h3 class="head">Item: "<%= data.name %>"</h3>
+                <h3 class="head">Price: "<%= data.price %>" </h3>
+                <h3 class="head">Color: "<%= data.color %>"</h3>
+
+                <div class="button-area">
+                    <button onclick="window.location.href='/admin/edit/<%=data._id%>'" id="edit">Edit</button>
+                    <button id="delete" onclick="window.location.href='/admin/delete/<%=data._id%>'">Delete</button>
+
+                </div>
+
+            </div>
+            <% }) %>
+        </div>
+
+    </div>
+</body>
+</html>

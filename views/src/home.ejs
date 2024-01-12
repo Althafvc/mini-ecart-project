@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/home.css">
+
+</head>
+
+
+
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <div class="nav-left"><h2>Sports-cart.com</h2></div>
+            <div class="nav-right"><button class="btn" onclick="window.location.href='/user/setprofile'">Profile</button>
+                <button class="btn" onclick="window.location.href = '/user/logout'" style="margin-left: 50px;">Logout</button>
+            </div>
+            
+        </div>
+
+        <div class="expansion">
+        
+            <% datas.forEach((data) =>{ %>
+
+            <div class="product-area">
+
+
+                <img src="/uploads/<%= data.image %>"  width="100%" height="100%"  alt="image not found" >
+                <form action="/signup" method="post">
+               
+                
+<div class="form-set"> <label for="name">Item:</label>
+    <input type="text" value="<%= data.name %>" class="inp" name="name" id="name"></div>
+                   
+    <div class="form-set"><label for="price">Price:</label>
+        <input type="text"  value="<%= data.price %>"  class="inp" name="price" id="price"></div>
+                    
+    <div class="form-set">  <label for="color">Color:</label>
+        <input type="text"  value="<%= data.color %>"  class="inp" name="color" id="color"></div>
+                  
+
+            </div>
+            <% }) %>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/userprofile.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <h2>Complete your profile</h2>
+            <button class="btn" onclick="window.location.href= '/user/logout'">Logout</button>
+        </div>
+
+        <div class="expansion">
+
+            <div class="user-area">
+
+                <div class="img-area">
+                    <img src=" /uploads/<%=fullData.address[0].imagePath %>"  alt="image not found">
+                  
+                </div>
+                <div class="details-area">
+                    <h2><%=fullData.name%></h2>
+                    <p style="font-weight: bold;">Active now</p>
+                </div> 
+                <div class="edit-area">
+                    <div class="btn-div">
+                    
+                </div>
+                </div>
+            </div>
+
+
+            <div class="form-area">
+                <form action="/user/setprofile" method="post" enctype="multipart/form-data">
+                    <label >House name:</label>
+                    <input type="text" name="housename" value="<%=fullData.address[0]?fullData.address[0].housename : null%>"><br>
+
+                    <label for="">House number:</label>
+                    <input type="number" name="housenumber" value="<%=fullData.address[0]?fullData.address[0].housenumber : null%>"><br>
+
+                    <label for="">City:</label>
+                    <input type="text" name="city" value="<%=fullData.address[0]?fullData.address[0].city : null%>"><br>
+
+                    <label for="">District:</label>
+                    <input type="text" name="district"value="<%=fullData.address[0]?fullData.address[0].district : null%>"><br>
+
+                    <label for="">State:</label>
+                    <input type="text" name="state" value="<%=fullData.address[0]?fullData.address[0].state : null%>"><br>
+
+                    <label for="">Nationality:</label>
+                    <input type="text" name="nationality" value="<%=fullData.address[0]?fullData.address[0].nationality : null%>"><br> 
+
+                    <input type="file" name="image">
+
+                    <input class="submit-btn" type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

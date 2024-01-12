@@ -21,12 +21,6 @@ const schema = {
         type:String,
         required:[true, 'password is required']
     },
-
-    confirmpassword:{
-        type:String,
-        required:[true, 'your password and confirmpassword must be equal']
-    },
-
     role:{
         type:Boolean
     }

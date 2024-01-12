@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registration form</title>
+    <link rel="stylesheet" href="/product-adding-form.css">
+</head>
+<body>
+    <div class="container">
+      
+
+       <div class="form-area">
+        <h2>Product Registration Form</h2>
+        <form action="addproduct" method="post" enctype="multipart/form-data">
+           
+            <label for="name">Product name:</label>
+            <input type="text" class="inp" name="name">
+
+            <label for="price">Price:</label>
+            <input type="number" class="inp" name="price">
+
+            <label for="color">Color:</label>
+            <input type="text" class="inp" name="color">
+
+            
+            <input type="file"  name="image" id="img-input">
+
+           
+
+            <div class="btn-area">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    </div>
+</body>
+</html>
